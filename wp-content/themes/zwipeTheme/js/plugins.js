@@ -24,7 +24,7 @@
       mode: 'fade',
       auto: true,
       autoControls: true,
-      pause: 2000
+      pause: 3000
     });    
 }());
 

@@ -13,53 +13,35 @@
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) & !(IE 8)]><!-->
-<html <?php language_attributes(); ?>>
-<!--<![endif]-->
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
-	<?php wp_head(); ?>
-</head>
-
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
+    <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <meta name="description" content="<?php bloginfo( 'description' ); ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/bxslider/jquery.bxslider.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
+        <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <?php wp_head(); ?>
+    </head>
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<?php if ( get_header_image() ) : ?>
-	<div id="site-header">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-		</a>
-	</div>
-	<?php endif; ?>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="header-main">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-			<div class="search-toggle">
-				<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
-			</div>
-
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
-				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			</nav>
-		</div>
-
-		<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
-				<?php get_search_form(); ?>
-			</div>
-		</div>
-	</header><!-- #masthead -->
-
-	<div id="main" class="site-main">
+<div id="homeslide">
+	<div><img src="<?php echo get_template_directory_uri(); ?>/img/test_banner.jpg" /></div>
+	<div><img src="<?php echo get_template_directory_uri(); ?>/img/test_banner.jpg" /></div>
+	<div><img src="<?php echo get_template_directory_uri(); ?>/img/test_banner.jpg" /></div>
+</div>
+	<header >
+		<nav id="primary-navigation">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="zwipe">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="zwipe">
+			</a>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+		</nav>
+	</header>

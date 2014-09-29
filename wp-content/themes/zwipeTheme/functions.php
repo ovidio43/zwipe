@@ -18,6 +18,14 @@ function zwipeTheme_widgets_init() {
 	'before_title' => '<h2>',
 	'after_title' => '</h2>',
 	)); 
+	register_sidebar (array(
+	'name' => __( 'Twitter box', 'zwipeTheme' ),
+	'id' => 'twitter_box',
+	'before_widget' => '',
+	'after_widget' => '',
+	'before_title' => '<h2>',
+	'after_title' => '</h2>',
+	)); 	
 }
 add_action( 'init', 'zwipeTheme_widgets_init' );
 

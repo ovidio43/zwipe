@@ -99,7 +99,11 @@
 		</div>
 		<div class="item">
 			<h3 class="title-items">Twitter</h3>
-			<div class="wrap-twitter"></div>
+			<div class="wrap-twitter">
+				<?php if ( is_active_sidebar( 'twitter_box' ) ) : ?>
+					<?php dynamic_sidebar( 'twitter_box' ); ?>
+				<?php endif; ?>				
+			</div>
 		</div>				
 	</div>
 	</div>

@@ -20,12 +20,42 @@
         }
     }
 
-    $('#homeslide').bxSlider({
-      mode: 'fade',
-      auto: true,
-      autoControls: true,
-      pause: 3000
-    });    
+    $('#top-slide').bxSlider({
+        mode: 'fade',
+        auto: true,
+        pause: 6000,
+        pager: false
+    });
+    $('#second-slide').bxSlider({
+        mode: 'fade',
+        auto: true,
+        pause: 8000,
+        controls: false
+    });     
+    $('.carrousel-slide').bxSlider({
+        minSlides: 2,
+        maxSlides: 3,
+        slideWidth: 260,
+        slideMargin: 20,
+        pager: false
+    });   
+    $('.carrousel-slide-news').bxSlider({
+        minSlides: 1,
+        maxSlides: 2,
+        slideWidth: 220,
+        slideMargin: 0,
+        pager: false
+    });
+    $('.carrousel-news').bxSlider({
+        minSlides: 2,
+        maxSlides: 4,
+        slideWidth: 237,
+        slideMargin: 0,
+        pager: false
+    });
+    $('.acf-map').each(function(){
+        render_map( $(this) );
+    });
 }());
 
 // Place any jQuery/helper plugins in here.

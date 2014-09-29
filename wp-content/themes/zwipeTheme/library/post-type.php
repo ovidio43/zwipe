@@ -2,9 +2,11 @@
 function custom_post_type_init() {
     $post_types = array(
         array("slug" => "slider", "plural" => "Slider", "singular" => "Item Slider", "rewrite" => "slider", "public" => true, "archive" => true, "supports" => array('title', 'editor', 'thumbnail')),
-        array("slug" => "stories", "plural" => "Slider", "Stories" => "Item Stories", "rewrite" => "stories", "public" => true, "archive" => true, "supports" => array('title', 'editor', 'thumbnail')),
-        array("slug" => "news", "plural" => "News", "Stories" => "Item News", "rewrite" => "news", "public" => true, "archive" => true, "supports" => array('title', 'editor', 'thumbnail')),
-        array("slug" => "products", "plural" => "Products", "Stories" => "Product", "rewrite" => "products", "public" => true, "archive" => true, "supports" => array('title', 'editor', 'thumbnail'))
+        array("slug" => "stories", "plural" => "Stories", "singular" => "Item Stories", "rewrite" => "stories", "public" => true, "archive" => true, "supports" => array('title', 'editor', 'thumbnail')),
+        array("slug" => "news", "plural" => "News", "singular" => "Item News", "rewrite" => "news", "public" => true, "archive" => true, "supports" => array('title', 'editor', 'thumbnail')),
+        array("slug" => "products", "plural" => "Products", "singular" => "Product", "rewrite" => "products", "public" => true, "archive" => true, "supports" => array('title', 'editor', 'thumbnail')),
+        array("slug" => "events", "plural" => "Events", "singular" => "Event", "rewrite" => "events", "public" => true, "archive" => true, "supports" => array('title', 'editor', 'thumbnail')),
+        array("slug" => "personal-profile", "plural" => "Profiles", "singular" => "Profile", "rewrite" => "personal-profile", "public" => true, "archive" => true, "supports" => array('title', 'thumbnail'))
     );
 
     foreach ($post_types as $pt) {

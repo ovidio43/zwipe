@@ -19,6 +19,7 @@ body{
 }
 h1{
 	font-size: 28px;
+
 }
 h3{
 	font-size: 18px;
@@ -61,6 +62,7 @@ a:focus {
 		color: @blue;
 		text-transform: uppercase;
 		margin-bottom: 0;
+		font-weight: 300;
 	}
 }
 .logo{
@@ -83,6 +85,17 @@ a:focus {
 		width: 100%;
 		height: auto;
 	}
+}
+#sidebar{
+	width: 160px;
+	position: absolute;
+	top: 0;
+	right: -160px;
+	padding: 0 0 0 20px;
+}
+.wrap-blog{
+	margin: 0 160px 0 0;
+	position: relative;
 }
 #primary-navigation{
 	float: right;
@@ -259,7 +272,7 @@ a:focus {
 .title-section{
 	margin: 20px 0;
 	text-transform: uppercase;
-	font-weight: 400;
+	font-weight: 300;
 	color: #3a3659;
 	text-align: center;
 	span{
@@ -338,7 +351,7 @@ a:focus {
 		}
 	}
 	.entry-date{
-		font-weight: 400;
+		font-weight: 300;
 		color: #c6c6c6;
 	}
 	.entry-content{
@@ -347,9 +360,9 @@ a:focus {
 		color: #3a3659;
 	}
 }
-.board-wrap{
+.board-wrap, .presentation{
 	padding: 50px 0 0 0;
-	#tabs{
+	#tabs, #tabsitem{
 		text-align: center;
 	}
 	.nav-tabs>li{
@@ -357,10 +370,41 @@ a:focus {
 		display: inline-block;
 		font-size: 22px;
 		text-transform: uppercase;
-		font-weight: 400;
+		font-weight: 300;
 	}
 	.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
 		color: @blue;
+	}
+}
+.presentation{
+	background-color: #f7f7f7;
+	.tab-content{
+		margin: 40px 0 0 0;
+	}
+	#tabsitem{
+		margin: 40px 0 0 0;
+	}
+}
+.acf-map {
+	width: 100%;
+	height: 400px;
+	border: #ccc solid 1px;
+	margin: 20px 0;
+}
+.moretag{
+	text-transform: uppercase;
+	color: @blue;
+	font-weight: 300;
+	position: relative;
+	i{
+		display: block;
+		width: 8px;
+		height: 12px;
+		background-image: url('../img/sprite.png');
+		position: absolute;
+		right: -13px;
+		top: 4px;
+		background-position: -84px -121px;
 	}
 }
 .wrap-profile{
@@ -404,6 +448,47 @@ a:focus {
 			&.mail{
 				background-position: -12px 34px;
 			}
+		}
+	}
+}
+.item-blog{
+	position: relative;
+	width: 100%;
+	float: left;
+	margin: 25px 0 ;
+	.entry-thumbnail{
+		min-width: 290px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.entry-content{
+		float: left;
+		padding: 0 0 0 320px;
+		font-weight: 300;
+		img{
+			width: 1px;
+			float: left;
+			visibility: hidden;
+		}
+		h2{
+			margin-top: 0;
+			font-weight: 600;
+			font-size: 16px;
+			text-transform: uppercase;
+		}
+		a{
+			color: @blue;
+		}
+	}
+	.aditional-links{
+		border-top: 1px solid #000;
+		padding: 10px 0;
+		line-height: 1em;
+		a{
+			color: @blue;
+			text-transform: uppercase;
+			font-weight: 300;
 		}
 	}
 }

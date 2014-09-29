@@ -72,7 +72,7 @@ if( $posts_r ): ?>
 	        <li><a href="#advisory">Advisory Board</a></li>
 	        <li><a href="#zwipe-team">Zwipe Team</a></li>
 	    </ul>
-	    <div id="my-tab-content" class="tab-content">
+	    <div  class="tab-content">
 	        <div class="tab-pane active" id="director">
 				<?php 
 				$posts_r = get_field('board_of_directors',get_the_ID());
@@ -165,16 +165,57 @@ if( $posts_r ): ?>
 </div>
 
 <div class="fullwidth presentation">
-	<?php 
-	$image = get_field('presentation_image',get_the_ID());
-	if( !empty($image) ): ?>
-		<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-	<?php endif; ?>
-	<?php the_field('presentation_text',get_the_ID());?>
+	<div class="wrapper">
+	<h1 class="title-section"><span>IP Presentation</span></h1>
+		<?php 
+		$rows = get_field('presentation_items',get_the_ID());
+		if($rows)
+		{
+			echo '<ul id="tabsitem" class="nav nav-tabs" data-tabs="tabs">';
+			$c=0;
+			foreach($rows as $row)
+			{ $c++;
+				if($c==1)$active="active";else $active="";
+				echo '<li class="'.$active.'"><a href="#item-'.$c.'">'.$row['title_presentation'] .'</a></li>';
+			}
+			echo '</ul>';
+		}	
+		?>
+		<?php 
+		$rows = get_field('presentation_items',get_the_ID());
+		if($rows)
+		{
+			$c=0;
+			echo '<div  class="tab-content">';
+			foreach($rows as $row)
+			{ $c++;
+				if($c==1)$active="active";else $active="";
+				?>
+		        <div class="tab-pane <?php echo $active;?>" id="item-<?php echo $c;?>">
+		        	<div class="alignleft col">
+						<?php 
+						$image = $row['presentation_image'];
+						$size = 'full'; // (thumbnail, medium, large, full or custom size)
+						if( $image ) {
+							echo wp_get_attachment_image( $image, $size );
+						}
+						?>
+		        	</div>
+		        	<div class="alignright col">
+		        		<?php echo $row['presentation_text'];?>
+		        	</div>
+					
+		        </div>		
+			<?php }
+			echo '</div>';
+		}	
+		?>		
+
+	</div>
 </div>
 <div class="fullwidth location">
 	<?php 
-	$location = get_field('location',get_the_ID());
+	$location = get_field('location_company',get_the_ID());
 	if( !empty($location) ):
 	?>
 	<div class="acf-map">

@@ -9,12 +9,24 @@ require_once(get_template_directory() . '/library/post-type.php');
 		'secondary' => __( 'Secondary menu in left sidebar', 'zwipeTheme' ),
 	) );
 
-if (function_exists('register_sidebars')) {
-    register_sidebars(4, array(
-        'name' => 'sidebar %d',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
-    ));
+function zwipeTheme_widgets_init() {
+	register_sidebar (array(
+	'name' => __( 'main sidebar', 'zwipeTheme' ),
+	'id' => 'main_sidebar',
+	'before_widget' => '',
+	'after_widget' => '',
+	'before_title' => '<h2>',
+	'after_title' => '</h2>',
+	)); 
 }
+add_action( 'init', 'zwipeTheme_widgets_init' );
+
+function my_excerpt_length($length) {
+  return 30; // Or whatever you want the length to be.
+}
+add_filter('excerpt_length', 'my_excerpt_length');
+function new_excerpt_more($more) {
+       global $post;
+	return '<br><a class="moretag" href="'. get_permalink($post->ID) . '"> Read More <i></i></a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

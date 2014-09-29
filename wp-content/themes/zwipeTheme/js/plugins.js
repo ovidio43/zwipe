@@ -53,9 +53,7 @@
         slideMargin: 0,
         pager: false
     });
-    $('.acf-map').each(function(){
-        render_map( $(this) );
-    });
+
 }());
 
 // Place any jQuery/helper plugins in here.

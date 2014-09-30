@@ -88,8 +88,9 @@ function center_map( map ) {
 }
 $(document).ready(function() {
 	$('.wrap-slide .bx-viewport').height($(window).height());
-	$('#tabsitem a[href="#item-1"]').tab('show');
-	$('#tabs a, #tabsitem a').click(function (e) {
+
+
+	$('#tabs a, #tabsitem a, .tabs-product-info a').click(function (e) {
 	  e.preventDefault()
 	  $(this).tab('show');
 	})

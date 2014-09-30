@@ -492,3 +492,97 @@ a:focus {
 		}
 	}
 }
+.banner-product{
+	background-color: #f8f8f8;
+	padding: 40px 0 50px;
+	text-transform: uppercase;
+	h1{
+		font-size: 36px;
+		color: @blue;
+	}
+	h2{
+		font-size: 28px;
+		color: #000;
+	}
+	h3{
+		font-size: 22px;
+		font-weight: 300;
+		color: #000;
+	}
+}
+.tabs-products{
+	background-color: #f8f8f8;	
+	.head-product{
+		li{
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 300;
+			&.active a{
+				color: @blue;
+			}
+		}
+	}	
+}
+.wrap-product{
+	.tab-pane{
+		.entry-thumbnail{
+			float: left;
+			width: 40%;
+			
+		}
+		.info-tabs{
+			float: left;
+			width: 60%;
+			.wrap-file{
+				border-bottom: 1px solid #d4d4d4;
+				border-top: 1px solid #d4d4d4;
+				padding: 30px 0 30px 60px;
+				text-align: center;			
+			}
+			.file-pdf{
+				position: relative;
+				font-size: 22px;
+				color: #e1058c;
+				text-transform: uppercase;
+				font-weight: 300;
+				.icon-pdf{
+					position: absolute;
+					left: -60px;
+					top: -15px;
+				}
+			}
+		}
+	}
+	.wrap-sub-product{
+		padding: 40px 0;
+		float: left;
+		width: 100%;		
+	}
+	.wrap-info-product{
+		padding: 40px 0;
+		float: left;
+		width: 100%;
+		.item-info{
+			text-transform: uppercase;
+			font-weight: 300;
+			border-bottom: 1px solid #d4d4d4;
+			padding: 13px 0 13px 75px;
+			position: relative;
+			.icon-info{
+				position: absolute;
+				left: 0;
+				top: 8px;
+			}
+		}	
+	}
+	.tabs-product-info{
+		li{
+			font-weight: 300;
+			font-size: 22px;
+			text-transform: uppercase;
+			&.active a{
+				color: @blue;
+			}			
+		}
+	}
+}
